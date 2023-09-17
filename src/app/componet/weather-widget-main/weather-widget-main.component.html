@@ -1,0 +1,18 @@
+<div id="divWeatherMain">
+    <input type="text" [(ngModel)]="city" placeholder="Enter city name" />
+<button (click)="searchCity()">Search</button>
+    <div *ngIf="WeatherData.isDay" class="WeatherWidgetRow">
+        <i class="fas fa-3x fa-sun sun"></i>
+    </div>
+    <div *ngIf="!WeatherData.isDay" class="WeatherWidgetRow">
+        <i class="fas fa-3x fa-moon moon"></i>
+    </div>
+    <div class="WeatherWidgetRow cloudDiv">
+        <i class="fas fa-3x fa-cloud cloud"></i>
+    </div>
+    <div class="WeatherWidgetRow" style="font-size: 32px;margin-top: 5px;">{{WeatherData.temp_celcius}}°</div>
+    <div class="WeatherWidgetRow" style="font-size: 12px">{{WeatherData.temp_min}}°/{{WeatherData.temp_max}}°</div>
+    <div class="WeatherWidgetRow" style="font-size: 12px">Feels Like: {{WeatherData.weather[0].description}}</div>
+    <div class="WeatherWidgetRow" style="font-size: 25px;margin-top:10px;">{{WeatherData.name}} </div>
+    <div class="WeatherWidgetRow" style="font-size: 12px">Humidity:{{WeatherData.main.humidity}}%</div>
+</div> 
